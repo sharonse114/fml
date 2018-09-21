@@ -32,6 +32,8 @@ text-align: center;
  border: 1px solid #000;
  border-radius: 4px;
  padding: 20px;
+ color: black;
+ background-color:  #00cccc;
 }
 .Overlay {
  position: fixed;
@@ -67,12 +69,12 @@ h1{
   -webkit-text-stroke: 1px grey;
 }
 body{
-  background-color: rgb(49, 63, 63);
+  background-color:  black;
   color: white;
 }
 .btn-danger{
   color: white;
-  background-color: white;
+  background-color: red;
     border-color: white;
     padding: 2px;
     margin: 2px;
@@ -123,10 +125,10 @@ table {
   border-collapse: collapse;
   border: 1px solid #eee;
   border-bottom: 2px solid #00cccc;
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
-     0px 10px 20px rgba(0,0,0,0.05),
-     0px 20px 20px rgba(0,0,0,0.05),
-     0px 30px 20px rgba(0,0,0,0.05);
+  box-shadow: 0px 0px 20px grey,
+     0px 10px 20px grey,
+     0px 20px 20px lime,
+     0px 30px 20px aqua;
   tr {
      &:hover {
       background: #f4f4f4;
@@ -149,5 +151,9 @@ table {
     font-size: 12px;
     &.last {
       border-right: none;
-    }
+  }
+}
+  .btn-success{
+    background-color: lime;
+
   }
