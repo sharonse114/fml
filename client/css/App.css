@@ -67,9 +67,8 @@ h1{
   -webkit-text-stroke: 1px grey;
 }
 body{
-  background-color: black;
+  background-color: rgb(49, 63, 63);
   color: white;
-  
 }
 .btn-danger{
   color: white;
@@ -90,8 +89,65 @@ body{
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
   color: white;
+  margin: 0px 10px 15px 0px;
 }
 a {
   color: lime;
   text-decoration: none;
 }
+
+/*test*/
+
+ table {
+  border-spacing: 0.5rem;
+  margin: 25px 50px 75px 100px;
+  
+}
+td {
+  padding: 0.5rem;
+}
+
+td:nth-child(1) { background: hsl(150, 50%, 50%); }
+td:nth-child(2) { background: hsl(160, 60%, 50%); }
+td:nth-child(3) { background: hsl(170, 70%, 50%); }
+td:nth-child(4) { background: hsl(180, 80%, 50%); }
+td:nth-child(5) { background: hsl(190, 90%, 50%); }
+td:nth-child(6) { background: hsl(200, 99%, 50%); }
+
+@import "compass/css3";
+
+table {
+  background-color: black;
+  font-family: 'Arial';
+  margin: 25px auto;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  border-bottom: 2px solid #00cccc;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
+     0px 10px 20px rgba(0,0,0,0.05),
+     0px 20px 20px rgba(0,0,0,0.05),
+     0px 30px 20px rgba(0,0,0,0.05);
+  tr {
+     &:hover {
+      background: #f4f4f4;
+      
+      td {
+        color: #555;
+      }
+    }
+  }
+  th, td {
+    color: #999;
+    border: 1px solid #eee;
+    padding: 12px 35px;
+    border-collapse: collapse;
+  }
+  th {
+    background: #00cccc;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    &.last {
+      border-right: none;
+    }
+  }
