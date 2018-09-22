@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: false}));
 
-mongoose.connect('mongodb://sadvarsco:themaxx1234@ds251022.mlab.com:51022/expenses',{ useNewUrlParser: true });
+mongoose.connect('mongodb://sharonse:abc123@ds249942.mlab.com:49942/expenses',{ useNewUrlParser: true });
 
 app.use('/', router);
 

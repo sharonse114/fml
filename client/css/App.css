@@ -65,11 +65,12 @@ h1{
   color: white;
   font-size: 60px;
   font-family: 'Lobster', cursive;
-  text-shadow: 3px 2px lime;
+  text-shadow: 3px 2px #00cccc;
   -webkit-text-stroke: 1px grey;
+  background-color: black;
 }
 body{
-  background-color:  black;
+  background-color:  white;
   color: white;
 }
 .btn-danger{
@@ -86,15 +87,30 @@ body{
   padding: 2px;
 }
 .nav-tabs>li>a {
-  margin-right: 2px;
+  
   line-height: 1.42857143;
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
   color: white;
-  margin: 0px 10px 15px 0px;
+  margin: 2px 2px 0px 2px;
+  background-color: #000;
+  float:none;
+    display:inline-block;
+    zoom:1;
+  font-family: 'Lobster', cursive;
+  font-size: 16px;
 }
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #00cccc;
+  font-style: 'Lobster', cursive;
+    font-size: 14px;
+}
+
 a {
-  color: lime;
+  color: #00cccc;
   text-decoration: none;
 }
 
@@ -126,9 +142,9 @@ table {
   border: 1px solid #eee;
   border-bottom: 2px solid #00cccc;
   box-shadow: 0px 0px 20px grey,
-     0px 10px 20px grey,
-     0px 20px 20px lime,
-     0px 30px 20px aqua;
+     0px 05px 10px grey,
+     0px 10px 10px #00cccc,
+     0px 20px 10px aqua;
   tr {
      &:hover {
       background: #f4f4f4;
@@ -137,6 +153,7 @@ table {
         color: #555;
       }
     }
+  
   }
   th, td {
     color: #999;
@@ -154,6 +171,7 @@ table {
   }
 }
   .btn-success{
-    background-color: lime;
+    background-color: #00cccc;
 
   }
+  
