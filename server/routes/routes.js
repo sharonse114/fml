@@ -118,7 +118,7 @@ passport.use(new LocalStrategy(function (username, pword, done) {
     '_id name userName password',
     function (err, user) {
       if (err) return handleError(err)
-      return done(null, user._id);
+      return done(null, user);
     }
   );
 }));
@@ -164,26 +164,24 @@ let User = require('./user');
 /**********************************************************/
 router.get('/', function (req, res, next) {
   if (req.isAuthenticated()) {
-    console.log('user is authenticated');
+    console.log('user is authenticated with the following ID');
+    console.log(req.user._id);
+
+    //ID of logged in user
+    pID= req.user._id;
+    res.render('index', {pID});
   } else {
     console.log('user is not authenticated');
+    res.redirect('/login');
   }
-  User.find({}, function (err, person) {
-    if (err) return handleError(err);
-    res.render('index');
-  });
+  // User.find({}, function (err, person) {
+  //   if (err) return handleError(err);
+  //   res.render('index');
+  // });
 });
 
 router.get('/index', function (req, res, next) {
-  if (req.isAuthenticated()) {
-    console.log('user is authenticated');
-  } else {
-    console.log('user is not authenticated');
-  }
-  User.find({}, function (err, person) {
-    if (err) return handleError(err);
-    res.render('index');
-  });
+  res.redirect('/');
 });
 
 /**********************************************************/
@@ -239,7 +237,7 @@ router.post('/newuser', (req, res) => {
       } else {
         console.log('User successfully saved.');
         //logs user in after creation and redirects to main page
-        req.login(userData._id, function (err) {
+        req.login(userData, function (err) {
           res.redirect('/');
         });
       }
@@ -273,6 +271,12 @@ router.post('/login', passport.authenticate('local', {
   failureRedirect: '/failed'
 }));
 
+
+router.get('/failed', function (req, res, next) {
+  res.render('failed', {
+    title: 'failed'
+  });
+});
 //Logout
 // destroys any session, redirects to index page
 router.get('/logout', function (req, res) {
@@ -280,6 +284,7 @@ router.get('/logout', function (req, res) {
   req.session.destroy();
   res.redirect('/');
 });
+
 
 /**********************************************************/
 /* END END END
